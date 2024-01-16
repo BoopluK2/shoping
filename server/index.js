@@ -2,13 +2,13 @@ import express from "express";
 import dotenv from "dotenv";
 import coonectDatebase from "./config/mongoDb.js";
 
-// import ImportData from "./DataImport.js";
+import ImportData from "./DataImport.js";
 
-// import productRoute from "./Routes/ProductRoutes.js";
-// import userRouter from "./Routes/UserRoutes.js";
-// import products from "./data/Products.js";
-// import {notFound, errorHandler } from "./Middleware/Errors.js"
-// import orderRouter from "./Routes/orederRoutes.js";
+import productRoute from "./Routes/ProductRoutes.js";
+import userRouter from "./Routes/UserRoutes.js";
+import products from "./data/Products.js";
+import {notFound, errorHandler } from "./Middleware/Errors.js"
+import orderRouter from "./Routes/orederRoutes.js";
 
 
 dotenv.config();
@@ -17,15 +17,15 @@ const app = express();
 app.use(express.json());
 
 
-// app.use("/api/import", ImportData);
+app.use("/api/import", ImportData);
 
-// app.use("/api/products", productRoute);
-// app.use("/api/users", userRouter);
-// app.use("/api/orders", orderRouter);
+app.use("/api/products", productRoute);
+app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
 
 
-// app.use(notFound);
-// app.use(errorHandler)
+app.use(notFound);
+app.use(errorHandler)
 
 app.get("/", (req, res) => {
     res.send("API работает...")
