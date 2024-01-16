@@ -7,7 +7,7 @@ import ImportData from "./DataImport.js";
 import productRoute from "./Routes/ProductRoutes.js";
 import userRouter from "./Routes/UserRoutes.js";
 import products from "./data/Products.js";
-import {notFound, errorHandler } from "./Middleware/Errors.js"
+// import {notFound, errorHandler } from "./Middleware/Errors.js"
 import orderRouter from "./Routes/orederRoutes.js";
 
 
@@ -24,8 +24,8 @@ app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 
 
-app.use(notFound);
-app.use(errorHandler)
+// app.use(notFound);
+// app.use(errorHandler)
 
 app.get("/", (req, res) => {
     res.send("API работает...")
