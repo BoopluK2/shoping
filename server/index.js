@@ -1,15 +1,14 @@
 import express from "express";
-import products from "./data/Products.js";
 import dotenv from "dotenv";
 import coonectDatebase from "./config/mongoDb.js";
 
-import ImportData from "./DataImport.js";
+// import ImportData from "./DataImport.js";
 
-import productRoute from "./Routes/ProductRoutes.js";
-import userRouter from "./Routes/UserRoutes.js";
-
-import {notFound, errorHandler } from "./Middleware/Errors.js"
-import orderRouter from "./Routes/orederRoutes.js";
+// import productRoute from "./Routes/ProductRoutes.js";
+// import userRouter from "./Routes/UserRoutes.js";
+// import products from "./data/Products.js";
+// import {notFound, errorHandler } from "./Middleware/Errors.js"
+// import orderRouter from "./Routes/orederRoutes.js";
 
 
 dotenv.config();
