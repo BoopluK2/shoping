@@ -23,7 +23,7 @@ userRouter.post("/login", asyncHandler(
             })
         } else {
             res.status(401);
-            throw new Error("Неверный адрес электронной почты или пароль")
+            throw new Error("Invalid email address or password")
         }
     }
 ));
@@ -38,7 +38,7 @@ userRouter.post("/", asyncHandler(
 
         if (userExists) {
             res.status(400);
-            throw new Error("Пользователь уже существует")
+            throw new Error("The user already exists")
         }
 
         const user = await User.create({
@@ -58,7 +58,7 @@ userRouter.post("/", asyncHandler(
             });
         } else {
             res.status(400);
-            throw new Error("Неверные данные пользователя")
+            throw new Error("Invalid user data")
         }
     }
 ));
@@ -78,7 +78,7 @@ userRouter.get("/profile", protect, asyncHandler(
             })
         } else {
             res.status(404);
-            throw new Error("Пользователь не найден")
+            throw new Error("The user was not found")
        }
     }
 ));
@@ -104,7 +104,7 @@ userRouter.put("/profile", protect, asyncHandler(
 
         } else {
             res.status(404);
-            throw new Error("Пользователь не найден")
+            throw new Error("The user was not found")
        }
     }
 ));

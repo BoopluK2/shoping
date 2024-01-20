@@ -32,7 +32,7 @@ productRoute.get("/:id", asyncHandler(
             res.json(product)
         } else {
             res.status(404);
-            throw new Error("Товар не найден")
+            throw new Error("The product was not found")
         }
     }
 ));
@@ -51,7 +51,7 @@ productRoute.post(
   
         if (alreadyReviewed) {
           res.status(400);
-          throw new Error("Товар уже проверен");
+          throw new Error("The product has already been checked");
         }
   
         const review = {
@@ -69,10 +69,10 @@ productRoute.post(
 
   
         await product.save();
-        res.status(201).json({ message: "Отзыв добавлен" });
+        res.status(201).json({ message: "Review added" });
       } else {
         res.status(404);
-        throw new Error("Товар не найден");
+        throw new Error("The product was not found");
       }
     })
   );

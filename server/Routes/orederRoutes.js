@@ -12,7 +12,7 @@ orderRouter.post("/", protect, asyncHandler(
 
         if (orderItems && orderItems.length === 0) {
             res.status(400)
-            throw new Error("Нет товаров в заказе")
+            throw new Error("There are no items in the order")
         } else {
             const order = new Order({
                 orderItems, user: req.user._id, shippingAddress, paymentMethod, itemsPrice, taxPrice, shippingPrice, totalPrice
@@ -36,7 +36,7 @@ orderRouter.get("/:id", protect, asyncHandler(
             res.json(order)
         } else {
             res.status(404)
-            throw new Error("Заказ не найден")
+            throw new Error("The order was not found")
         }
     }
 ));

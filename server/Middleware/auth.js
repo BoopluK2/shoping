@@ -19,7 +19,7 @@ const protect = asyncHandler(
             } catch (error) {
                 console.error(error);
                 res.status(401)
-                throw new Error("Не авторизовано, токен не удался");
+                throw new Error("Not authorized, the token failed");
             }
         
         }
@@ -28,7 +28,7 @@ const protect = asyncHandler(
         
         if (!token) {
             res.status(401);
-            throw new Error("Не авторизовано, нет токена");
+            throw new Error("Not authorized, no token");
         }
     }
 );

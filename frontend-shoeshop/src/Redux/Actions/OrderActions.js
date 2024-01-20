@@ -27,7 +27,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
     } catch (error) {
         const message = error.response && error.response.data.message ? error.response.data.message : error.message;
 
-        if (message === "Не авторизовано, токен не удался") {
+        if (message === "Not authorized, the token failed") {
             dispatch(logout());
         }
  
@@ -61,7 +61,7 @@ export const detailsOrder = (id) => async (dispatch, getState) => {
     } catch (error) {
         const message = error.response && error.response.data.message ? error.response.data.message : error.message;
 
-        if (message === "Не авторизовано, токен не удался") {
+        if (message === "Not authorized, the token failed") {
             dispatch(logout());
         }
  

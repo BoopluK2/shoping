@@ -46,9 +46,9 @@ app.use("/api/orders", orderRouter);
 // app.use(errorHandler)
 
 app.get("/", (req, res) => {
-    res.send("API работает...")
+    res.send("The API is working...")
 })
 
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT,console.log(`сервер работает порт ${PORT}`))
+app.listen(PORT,console.log(`The server is running port ${PORT}`))
