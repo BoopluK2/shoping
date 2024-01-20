@@ -54,6 +54,7 @@ userRouter.post("/", asyncHandler(
                 email: user.email,
                 isAdmin: user.isAdmin,
                 token: generateToken(user._id)
+                
             });
         } else {
             res.status(400);
