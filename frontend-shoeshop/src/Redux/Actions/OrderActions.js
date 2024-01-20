@@ -18,7 +18,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.post(`https://shoping-eta.vercel.app/api/orders`,order, config);
+        const { data } = await axios.post(`/api/orders`,order, config);
 
         dispatch({ type: ORDER_CREATE_SUCCESS, payload: data });
         dispatch({type: CART_CLEAR_ITEMS,payload: data});
@@ -53,7 +53,7 @@ export const detailsOrder = (id) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`https://shoping-eta.vercel.app/api/orders/${id}`, config);
+        const { data } = await axios.get(`/api/orders/${id}`, config);
 
         dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
         

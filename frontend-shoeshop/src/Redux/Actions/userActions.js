@@ -48,7 +48,7 @@ export const register = (name,email, password) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post(`https://shoping-eta.vercel.app/api/users`, { name,email, password}, config);
+        const { data } = await axios.post(`/api/users`, { name,email, password}, config);
 
         dispatch({type: USER_REGISTER_SUCCESS,payload: data});
         dispatch({type: USER_LOGIN_SUCCESS, payload: data})
@@ -79,7 +79,7 @@ export const getUserDetal = (id) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`https://shoping-eta.vercel.app/api/users/${id}`, config);
+        const { data } = await axios.get(`/api/users/${id}`, config);
 
         dispatch({ type: USER_DETALI_SUCCESS, payload: data });
     } catch (error) {
@@ -112,7 +112,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.put(`https://shoping-eta.vercel.app/api/users/profile`,user, config);
+        const { data } = await axios.put(`/api/users/profile`,user, config);
 
         dispatch({ type: USER_UPDATE_PROFILE_SUCCESS, payload: data });
         dispatch({
