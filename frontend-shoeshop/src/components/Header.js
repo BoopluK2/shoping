@@ -63,7 +63,7 @@ const Header = () => {
               <div className="row ">
                 <div className="col-6 d-flex align-items-center">
                   <Link className="navbar-brand" to="/">
-                    <h1>Shopper</h1>
+                    <h1>Munisa Shopper</h1>
                   </Link>
                 </div>
                 <div className="col-6 d-flex align-items-center justify-content-end Login-Register">
