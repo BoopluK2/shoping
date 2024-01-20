@@ -14,6 +14,14 @@ import orderRouter from "./Routes/orederRoutes.js";
 dotenv.config();
 coonectDatebase();
 const app = express();
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+
+
+
 app.use(express.json());
 
 

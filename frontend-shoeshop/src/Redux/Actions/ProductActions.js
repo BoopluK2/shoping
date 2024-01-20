@@ -7,7 +7,7 @@ export const listProduct = (keyword = " ", pageNumber = " ") => async (dispatch)
     try {
         dispatch({type: PRODUCT_LIST_REQUEST})
 
-        const { data } = await axios.get(`/api/products?keyword=${keyword}&pageNumber=${pageNumber}`);
+        const { data } = await axios.get(`https://shoping-eta.vercel.app/api/products?keyword=${keyword}&pageNumber=${pageNumber}`);
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
@@ -28,7 +28,7 @@ export const detailsProduct = (id) => async (dispatch) => {
     try {
         dispatch({type: PRODUCT_DETAILS_REQUEST})
 
-        const { data } = await axios.get(`/api/products/${id}`);
+        const { data } = await axios.get(`https://shoping-eta.vercel.app/api/products/${id}`);
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
@@ -59,7 +59,7 @@ export const createReview = (productId, review) => async (dispatch, getState) =>
             }
         }
 
-        await axios.post(`/api/products/${productId}/review`,review, config);
+        await axios.post(`https://shoping-eta.vercel.app/api/products/${productId}/review`,review, config);
 
         dispatch({ type: PRODUCT_CREATE_REVIEW_SUCCESS});
 
