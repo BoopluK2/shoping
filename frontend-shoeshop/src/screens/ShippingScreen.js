@@ -25,7 +25,7 @@ const ShippingScreen = ({history}) => {
   return (
     <>
       <Header />
-      <div className="container d-flex justify-content-center align-items-center login-center">
+      <div className=" d-flex justify-content-center align-items-center login-center">
         <form
           className="Login col-md-8 col-lg-4 col-11"
           onSubmit={submitHandler}

@@ -18,9 +18,9 @@ const OrderScreen = ({match}) => {
     return (Math.round(num * 100) / 100).toFixed(2);
   }
 
-  order.itemsPrice = addDecimals(
-    order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
-  );
+  // order.itemsPrice = addDecimals(
+  //   order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+  // );
 
   useEffect(() => {
     dispatch(detailsOrder(orderId))
@@ -31,6 +31,7 @@ const OrderScreen = ({match}) => {
       <Header />
       <div className="container">
         {
+         
           loading ? (<Loading />) : error ? (<Message variant="alert-danger">{error}</Message>) : (
             <>
               <div className="row  order-detail">
@@ -118,7 +119,7 @@ const OrderScreen = ({match}) => {
                     ) : (
                         <>
                           {order.orderItems.map((item, index) => (
-                            <div className="order-product row">
+                            <div  className="order-product row">
                             <div className="col-md-3 col-6">
                               <img src={item.image} alt={item.name} />
                             </div>
@@ -147,12 +148,6 @@ const OrderScreen = ({match}) => {
           <div className="col-lg-3 d-flex align-items-end flex-column mt-5 subtotal-order">
             <table className="table table-bordered">
             <tbody>
-                <tr>
-                  <td>
-                    <strong>Products</strong>
-                  </td>
-                  <td>${order.itemsPrice}</td>
-                </tr>
                 <tr>
                   <td>
                     <strong>Shipping</strong>

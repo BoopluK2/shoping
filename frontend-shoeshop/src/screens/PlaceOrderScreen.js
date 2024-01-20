@@ -116,7 +116,7 @@ const PlaceOrderScreen = ({history}) => {
               cart.cartItems.length === 0 ? (<Message variant="alert-info mt-5">Your cart is empty</Message>) : (
                 <>
                   {cart.cartItems.map((item, index) => (
-                       <div className="order-product row">
+                       <div className="order-product row" key={index}>
                        <div className="col-md-3 col-6">
                          <img src={item.image} alt={item.name} />
                        </div>
