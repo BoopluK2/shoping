@@ -36,12 +36,14 @@ const Register = ({location, history}) => {
       <div className="container d-flex flex-column justify-content-center align-items-center login-center">
       {error && <Message variant="alert-danger">{error}</Message>}
         {loading && <Loading/>}
-        <form className="Login col-md-8 col-lg-4 col-11" onClick={submitHandler}>
+        <form className="Login col-md-8 col-lg-4 col-11" >
           <input type="text" placeholder="Username" value={name} onChange={(e) => setName(e.target.value)} />
+
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-          <button type="submit">Register</button>
+          <button type="submit" onClick={submitHandler}>Register</button>
           <p>
             <Link to={ redirect ? `/login?redirect=${redirect}` : "/login"}>
               I Have Account <strong>Login</strong>
